@@ -1,0 +1,28 @@
+{
+  "name": "@hackernews/api",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@hackernews/auth": "workspace:*",
+    "@hackernews/db": "workspace:*",
+    "@hackernews/env": "workspace:*",
+    "@trpc/client": "catalog:",
+    "@trpc/server": "catalog:",
+    "dotenv": "catalog:",
+    "drizzle-orm": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@hackernews/config": "workspace:*",
+    "hono": "catalog:",
+    "typescript": "^5"
+  }
+}

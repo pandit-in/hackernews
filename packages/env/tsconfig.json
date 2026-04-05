@@ -1,0 +1,3 @@
+{
+  "extends": "@hackernews/config/tsconfig.base.json"
+}

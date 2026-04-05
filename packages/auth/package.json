@@ -1,0 +1,24 @@
+{
+  "name": "@hackernews/auth",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.ts"
+    },
+    "./*": {
+      "default": "./src/*.ts"
+    }
+  },
+  "scripts": {},
+  "dependencies": {
+    "@hackernews/db": "workspace:*",
+    "@hackernews/env": "workspace:*",
+    "better-auth": "catalog:",
+    "dotenv": "catalog:",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@hackernews/config": "workspace:*",
+    "typescript": "^5"
+  }
+}
