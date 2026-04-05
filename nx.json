@@ -1,7 +1,10 @@
 {
   "$schema": "./node_modules/nx/schemas/nx-schema.json",
   "namedInputs": {
-    "default": ["{projectRoot}/**/*", "sharedGlobals"],
+    "default": [
+      "{projectRoot}/**/*",
+      "sharedGlobals"
+    ],
     "production": [
       "default",
       "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
@@ -11,12 +14,22 @@
   },
   "targetDefaults": {
     "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["production", "^production"]
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "production",
+        "^production"
+      ]
     },
     "check-types": {
-      "dependsOn": ["^check-types"],
-      "inputs": ["default", "^default"]
+      "dependsOn": [
+        "^check-types"
+      ],
+      "inputs": [
+        "default",
+        "^default"
+      ]
     },
     "dev": {
       "cache": false
@@ -33,5 +46,6 @@
     "destroy": {
       "cache": false
     }
-  }
+  },
+  "nxCloudId": "69d24e638f863fff4027f55e"
 }
