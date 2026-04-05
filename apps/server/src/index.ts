@@ -8,12 +8,23 @@ import { cors } from "hono/cors";
 import { logger } from "hono/logger";
 
 const app = new Hono();
+const allowedOrigins = new Set([
+  env.CORS_ORIGIN,
+  "http://localhost:3001",
+  "http://localhost:5173",
+]);
 
 app.use(logger());
 app.use(
   "/*",
   cors({
-    origin: env.CORS_ORIGIN,
+    origin: (origin) => {
+      if (!origin) {
+        return env.CORS_ORIGIN;
+      }
+
+      return allowedOrigins.has(origin) ? origin : env.CORS_ORIGIN;
+    },
     allowMethods: ["GET", "POST", "OPTIONS"],
     allowHeaders: ["Content-Type", "Authorization"],
     credentials: true,

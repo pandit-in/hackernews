@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "@hackernews/env": "workspace:*",
+    "alchemy": "^0.90.1",
     "dotenv": "catalog:",
     "zod": "catalog:"
   },
